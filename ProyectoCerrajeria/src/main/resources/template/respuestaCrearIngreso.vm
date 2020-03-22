@@ -1,0 +1,6 @@
+{
+ "rActNeg":"#if(${exchange.properties.rActNeg})${exchange.properties.rActNeg}#end",
+ "rNegComp":"#if(${exchange.properties.rNegComp})${exchange.properties.rNegComp}#end",
+ "rNroComp":"#if(${exchange.properties.rNroComp})${exchange.properties.rNroComp}#end",
+ "vActRta":"#if(${exchange.properties.vActRta})${exchange.properties.vActRta}#end"
+}
