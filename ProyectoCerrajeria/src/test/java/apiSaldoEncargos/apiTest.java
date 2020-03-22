@@ -22,7 +22,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.mock.jndi.SimpleNamingContextBuilder;
 
 import co.com.entelgy.model.RequestRest;
-import oracle.jdbc.pool.OracleConnectionPoolDataSource;
 
 
 public class apiTest extends CamelSpringTestSupport {
@@ -85,12 +84,12 @@ public class apiTest extends CamelSpringTestSupport {
 			System.setProperty(Context.URL_PKG_PREFIXES, "org.apache.naming");
 			SimpleNamingContextBuilder builder = new SimpleNamingContextBuilder();
 			// Construct DataSource
-			OracleConnectionPoolDataSource ds = new OracleConnectionPoolDataSource();
-			ds.setURL("jdbc:oracle:thin:@172.16.0.230:1521:fidudesa");
-			ds.setUser("INT_WS");
-			ds.setPassword("sistemas");
+//			OracleConnectionPoolDataSource ds = new OracleConnectionPoolDataSource();
+//			ds.setURL("jdbc:oracle:thin:@172.16.0.230:1521:fidudesa");
+//			ds.setUser("INT_WS");
+//			ds.setPassword("sistemas");
 
-			builder.bind("dataSource", ds);
+//			builder.bind("dataSource", ds);
 			builder.activate();
 
 		} catch (Exception ex) {

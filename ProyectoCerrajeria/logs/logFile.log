@@ -66418,3 +66418,183 @@ TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
 <td class="LineOfCaller">159</td>
 <td class="Message">FINALZA RUTA ((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}])))</td>
 </tr>
+
+<tr class="info odd">
+<td class="Date">20:57:30.752</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:30.840</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.beans.factory.xml.XmlBeanDefinitionReader</td>
+<td class="LineOfCaller">317</td>
+<td class="Message">Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:30.933</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">INFO</td>
+<td class="Logger">org.springframework.jdbc.support.SQLErrorCodesFactory</td>
+<td class="LineOfCaller">127</td>
+<td class="Message">SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]</td>
+</tr>
+
+<tr class="error even">
+<td class="Date">20:57:32.985</td>
+<td class="Thread">XNIO-2 task-3</td>
+<td class="Level">ERROR</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">156</td>
+<td class="Message">ERROR: CXF-SERVICE-CREARINGRESO-API || CONSULTA-DATOS || ID-DESKTOP-0JNP98L-49605-1584840278679-0-4 || 2020-03-21T20:57:32:985 || PreparedStatementCallback; SQL []; The last packet successfully received from the server was 1.959.475 milliseconds ago. The last packet sent successfully to the server was 1.959.682 milliseconds ago. is longer than the server configured value of &#39;wait_timeout&#39;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &#39;autoReconnect=true&#39; to avoid this problem.; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: The last packet successfully received from the server was 1.959.475 milliseconds ago. The last packet sent successfully to the server was 1.959.682 milliseconds ago. is longer than the server configured value of &#39;wait_timeout&#39;. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property &#39;autoReconnect=true&#39; to avoid this problem.</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:38.846</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:39.060</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:39.063</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}]))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:39.067</td>
+<td class="Thread">XNIO-2 task-5</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALZA RUTA ((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}])))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:40.201</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:40.449</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:40.449</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}]))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:40.451</td>
+<td class="Thread">XNIO-2 task-7</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALZA RUTA ((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}])))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:40.947</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:41.164</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:41.165</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}]))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:41.166</td>
+<td class="Thread">XNIO-2 task-9</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALZA RUTA ((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}])))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:41.752</td>
+<td class="Thread">XNIO-2 task-11</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:42.023</td>
+<td class="Thread">XNIO-2 task-11</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">((((((HASTA AQUI TODO BIEN))))))</td>
+</tr>
+
+<tr class="info odd">
+<td class="Date">20:57:42.024</td>
+<td class="Thread">XNIO-2 task-11</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">(((((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}]))))))</td>
+</tr>
+
+<tr class="info even">
+<td class="Date">20:57:42.027</td>
+<td class="Thread">XNIO-2 task-11</td>
+<td class="Level">INFO</td>
+<td class="Logger">rh1</td>
+<td class="LineOfCaller">159</td>
+<td class="Message">FINALZA RUTA ((([{cedula=52335856, nombre=Emilce, apellido=Camacho, fecha_nacimiento=1990-12-11, telefono=8765678, correo=ya@ya.com, direccion=Vereda Fonqueta}, {cedula=1030653123, nombre=Diana, apellido=Arevalosqui, fecha_nacimiento=1994-05-20, telefono=30164776190, correo=amormio@quedelicia.com, direccion=null}, {cedula=1092984748, nombre=Pacho, apellido=Sin fortuna, fecha_nacimiento=1980-12-11, telefono=4637743, correo=quedemalas@ayuda.com, direccion=null}])))</td>
+</tr>
