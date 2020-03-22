@@ -30,11 +30,11 @@
 		</property>
 	</bean>
 	<bean class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close" id="dataSource">
+		destroy-method="close" id="dataSource" >
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="${quickstart.jdbcConnection_Oracle}" />
+			value="${quickstart.jdbcConnection_Oracle}?autoReconnect=true" />
 		<property name="username"
 			value="${quickstart.jdbcUserName_Oracle}" />
 		<property name="password"
