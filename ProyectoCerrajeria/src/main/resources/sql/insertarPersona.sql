@@ -1,0 +1,2 @@
+INSERT INTO `personas`(`cedula`, `nombre`, `apellido`, `fecha_nacimiento`, `telefono`, `correo`, `direccion`) 
+VALUES (:#${property.cedulaPersona},:#${property.nombrePersona},:#${property.apellidoPersona},:#${property.fechaNacimientoPersona},:#${property.telefonoPersona},:#${property.correoPersona},:#${property.direccionPersona})

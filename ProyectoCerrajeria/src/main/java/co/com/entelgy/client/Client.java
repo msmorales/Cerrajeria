@@ -18,16 +18,30 @@ import co.com.entelgy.model.RequestRest;
 @Path("/")
 public interface Client {
 
-	@POST
-	@Path("/crearIngreso")
+	@GET
+	@Path("/consultarPersonas")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void crearIngreso(@Body RequestRest body);
+	public void consultarPersonas();
 	
 	@GET
 	@Path("/nombreProyecto")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void nombreProyecto();
+	
+	@GET
+	@Path("/consultarPersona")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void consultarPersona();
+	
 
+	@POST
+	@Path("/insertarPersona")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void insertarPersona(@Body RequestRest body);
+	
+	
 }

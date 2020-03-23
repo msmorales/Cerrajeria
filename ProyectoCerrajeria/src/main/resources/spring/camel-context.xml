@@ -30,11 +30,11 @@
 		</property>
 	</bean>
 	<bean class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close" id="dataSource" >
+		destroy-method="close" id="dataSource">
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="${quickstart.jdbcConnection_Oracle}?autoReconnect=true" />
+			value="${quickstart.jdbcConnection_Oracle}" />
 		<property name="username"
 			value="${quickstart.jdbcUserName_Oracle}" />
 		<property name="password"
@@ -132,6 +132,23 @@
 				<simple>{{quickstart.descripcion_ErrorProcedure}}</simple>
 			</setProperty>
 			<bean method="process" ref="respuestaErrorProcessor" />
+						<setProperty propertyName="nombreProyecto">
+				<simple>{{camel.springboot.name}}</simple>
+			</setProperty>
+			<setProperty propertyName="fechaSistema">
+				<simple>${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS}</simple>
+			</setProperty>
+			<to uri="velocity:template/ResponseBroker.vm" />
+			<log message="((((${body}))))" />
+			<setHeader headerName="Content-Type">
+				<constant>application/json</constant>
+			</setHeader>
+			<setHeader headerName="CamelHttpMethod">
+				<constant>POST</constant>
+			</setHeader>
+			<wireTap
+				uri="http4://${bean:prop?method=getUrlElasticSearch()}?bridgeEndpoint=true&amp;throwExceptionOnFailure=false" />
+			<to uri="velocity:template/ResponseError.vm" />
 			<stop />
 		</onException>
 		<onException id="CustomExceptionHandling"
@@ -165,6 +182,23 @@
 				<simple>{{quickstart.descripcion_ErrorTimeOut}}</simple>
 			</setProperty>
 			<bean method="process" ref="respuestaErrorProcessor" />
+						<setProperty propertyName="nombreProyecto">
+				<simple>{{camel.springboot.name}}</simple>
+			</setProperty>
+			<setProperty propertyName="fechaSistema">
+				<simple>${date:now:yyyy-MM-dd'T'HH:mm:ss:SSS}</simple>
+			</setProperty>
+			<to uri="velocity:template/ResponseBroker.vm" />
+			<log message="((((${body}))))" />
+			<setHeader headerName="Content-Type">
+				<constant>application/json</constant>
+			</setHeader>
+			<setHeader headerName="CamelHttpMethod">
+				<constant>POST</constant>
+			</setHeader>
+			<wireTap
+				uri="http4://${bean:prop?method=getUrlElasticSearch()}?bridgeEndpoint=true&amp;throwExceptionOnFailure=false" />
+			<to uri="velocity:template/ResponseError.vm" />
 			<stop />
 		</onException>
 		<onException id="CustomExceptionHandling"
@@ -211,18 +245,78 @@
 		</route>
 		<!-- ################################################################################################################################ -->
 		<route id="CONSULTA-DATOS">
-			<from id="_from3" uri="direct:crearIngreso" />
-			<log message="((((((HASTA AQUI TODO BIEN))))))" />
-			<!-- <to id="_to4" uri="sql:select * from personas?outputType=SelectList"/> -->
-			<to id="_to4"	uri="sql:classpath:sql/crearIngreso.sql?dataSource=#dataSource" />
-			<log message="((((((HASTA AQUI TODO BIEN))))))" />
+			<from id="_from3" uri="direct:consultarPersonas" />
+			<to id="_to4"
+				uri="sql:classpath:sql/consultarPersonas.sql?dataSource=#dataSource" />
 			<log message="((((((${body}))))))" />
 			<to id="_to7" uri="direct:responseCrearIngreso" />
 		</route>
+		<route id="CONSULTA-DATOS-UNA-PERSONA">
+			<from uri="direct:consultarPersona" />
+			<setHeader headerName="cedula">
+				<simple>${header.cedula}</simple>
+			</setHeader>
+			<to
+				uri="sql:classpath:sql/consultarPersona.sql?dataSource=#dataSource" />
+			<to uri="direct:responseCrearIngreso" />
+		</route>
+
+		<route id="INSERTAR-PERSONA" streamCache="true">
+			<from uri="direct:insertarPersona" />
+			<setProperty propertyName="cedulaPersona">
+				<camel:jsonpath>$.cedula</camel:jsonpath>
+			</setProperty>
+			<setProperty propertyName="nombrePersona">
+				<camel:jsonpath>$.nombre</camel:jsonpath>
+			</setProperty>
+			<setProperty propertyName="apellidoPersona">
+				<camel:jsonpath>$.apellido</camel:jsonpath>
+			</setProperty>
+			<setProperty propertyName="fechaNacimientoPersona">
+				<camel:jsonpath>$.fecha_nacimiento</camel:jsonpath>
+			</setProperty>
+			<setProperty propertyName="telefonoPersona">
+				<camel:jsonpath>$.telefono</camel:jsonpath>
+			</setProperty>
+			<setProperty propertyName="correoPersona">
+				<camel:jsonpath>$.correo</camel:jsonpath>
+			</setProperty>
+			<setProperty propertyName="direccionPersona">
+				<camel:jsonpath>$.direccion</camel:jsonpath>
+			</setProperty>
+			<to
+				uri="sql:classpath:sql/insertarPersona.sql?dataSource=#dataSource&amp;outputType=StreamList" />
+			<marshal>
+				<json library="Jackson" />
+			</marshal>
+			<log message="(((((${body})))))" />
+			<setProperty propertyName="cedulaResultante">
+				<camel:jsonpath>$.cedula</camel:jsonpath>
+			</setProperty>
+			<log message="${property.cedulaPersona}------------------------"/>
+			<log message="${property.cedulaResultante}------------------------"/>
+			<choice>
+				<when>
+					<simple>${property.cedulaPersona} == ${property.cedulaResultante}</simple>
+					<setProperty propertyName="resultadoQuery">
+						<simple>"Se ha creado usuario con cedula ${cedulaResultante}"</simple>
+					</setProperty>
+				</when>
+				<otherwise>
+				 <throwException
+                                exceptionType="co.com.entelgy.exceptions.ProcedureExcepcion"
+                                id="_throwException1" message="${property.descrOut}"/>
+				</otherwise>
+			</choice>
+			<log message="${property.resultadoQuery}------------------------"/>
+			<stop/>
+			<to uri="direct:responseCrearIngreso" />
+		</route>
+
 		<route id="RT-RESPUESTA-CREAR-INGRESO">
 			<from id="_from4" uri="direct:responseCrearIngreso" />
 			<log id="_log2" loggerRef="rh1"
-				message="FINALZA RUTA (((${body})))" />
+				message="FINALIZA RUTA (((${body})))" />
 			<stop id="_stop2" />
 		</route>
 	</camelContext>
